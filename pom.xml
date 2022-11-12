@@ -11,23 +11,30 @@
 
   <dependencies>
 
-    <dependency>
+      <dependency>
+          <groupId>org.telegram</groupId>
+          <artifactId>telegrambots</artifactId>
+          <version>6.3.0</version>
+      </dependency>
 
-     <groupId>org.telegram</groupId>
-     <artifactId>telegrambots</artifactId>
-     <version>6.3.0</version>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>1.7.35</version>
+      </dependency>
 
-    </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-simple</artifactId>
+          <version>1.7.35</version>
+      </dependency>
 
   </dependencies>
 
   <properties>
 
-
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-
-
 
   </properties>
 
