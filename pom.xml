@@ -48,8 +48,8 @@
                   <assembleDirectory>target</assembleDirectory>
                   <programs>
                       <program>
-                          <mainClass>com.home.server.TelegramBot</mainClass>
-                          <name>workerBot</name>
+                          <mainClass>Main</mainClass>
+                          <name>telegramBot</name>
                       </program>
                   </programs>
               </configuration>
