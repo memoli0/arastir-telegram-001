@@ -12,12 +12,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
-    <properties>
-
-    <maven.compiler.source>3.1</maven.compiler.source>
-    <maven.compiler.target>3.1</maven.compiler.target>
-
-  </properties>
-  
 </project>
