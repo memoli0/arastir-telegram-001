@@ -17,6 +17,7 @@ public class myBot extends TelegramLongPollingBot {
 
 
 
+
         if(message_text.equals("/run")){
 
             SendMessage response = new SendMessage();
@@ -29,6 +30,20 @@ public class myBot extends TelegramLongPollingBot {
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
+
+
+        }else if(message_text.equals("/start")){
+            SendMessage response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Merhaba ben arasTiR projesinin yardımcı telegram botuyum.");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
 
         }else if(message_text.equals("/kaynak_kategorileri")){
 
@@ -81,10 +96,15 @@ public class myBot extends TelegramLongPollingBot {
             ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
             // Create the keyboard (list of keyboard rows)
             ArrayList<KeyboardRow> keyboard = new ArrayList<>();
+
+            KeyboardRow row = new KeyboardRow();
+            keyboard.add(row);
+
             //Set the keyboard to the markup
             keyboardMarkup.setKeyboard(keyboard);
             // Add it to the message
             response.setReplyMarkup(keyboardMarkup);
+
 
             try {
                 execute(response); // Call method to send the message
