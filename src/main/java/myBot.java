@@ -1,3 +1,4 @@
+import com.vdurmont.emoji.EmojiParser;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -67,9 +68,11 @@ public class myBot extends TelegramLongPollingBot {
 
         }else{
 
+            String sorry = EmojiParser.parseToUnicode("Ne dediğini anlayamadım :pensive: ");
+
             SendMessage response = new SendMessage();
             response.setChatId(chat_id);
-            response.setText("Ne dediğini anlayamadım.");
+            response.setText(sorry);
 
             try {
                 execute(response); // Call method to send the message
