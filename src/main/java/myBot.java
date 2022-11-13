@@ -7,15 +7,18 @@ public class myBot extends TelegramLongPollingBot {
     private final String token = "5583906777:AAHkP9E8r8mG-28W8vnYJAyDIfCMjkZ8QS4";
     @Override
     public void onUpdateReceived(Update update) {
-        // TODO
-        //System.out.println(update.getMessage().getText());
+
+        String message_text = update.getMessage().getText();
+        long chat_id = update.getMessage().getChatId();
+
+
 
         String command = update.getMessage().getText();
 
         if(command.equals("/run")){
 
             SendMessage response = new SendMessage();
-            response.setChatId(update.getMessage().getChatId().toString());
+            response.setChatId(chat_id);
             response.setText("Hey bro");
 
             try {
@@ -30,13 +33,13 @@ public class myBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        // TODO
+
         return "kaynak_avcisi_bot";
     }
 
     @Override
     public String getBotToken() {
-        // TODO
+
         return token;
     }
 }
