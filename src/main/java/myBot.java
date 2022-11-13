@@ -43,6 +43,16 @@ public class myBot extends TelegramLongPollingBot {
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
+            response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Size nasıl yardımcı olabilirim?");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
 
 
         }else if(message_text.equals("/kaynak_kategorileri")){
@@ -83,8 +93,10 @@ public class myBot extends TelegramLongPollingBot {
             }
 
         }else{
-
-
+            //TODO
+            //Klavye sıfırlama eklenecek
+            //Firebase bağlantısı yapılacak
+            //Kategori kaydı eklenecek
 
             String sorry = EmojiParser.parseToUnicode("Ne dediğini anlayamadım :pensive: ");
 
