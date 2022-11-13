@@ -70,11 +70,21 @@ public class myBot extends TelegramLongPollingBot {
         }else{
 
 
+
             String sorry = EmojiParser.parseToUnicode("Ne dediğini anlayamadım :pensive: ");
 
             SendMessage response = new SendMessage();
             response.setChatId(chat_id);
             response.setText(sorry);
+
+            // Create ReplyKeyboardMarkup object
+            ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
+            // Create the keyboard (list of keyboard rows)
+            ArrayList<KeyboardRow> keyboard = new ArrayList<>();
+            //Set the keyboard to the markup
+            keyboardMarkup.setKeyboard(keyboard);
+            // Add it to the message
+            response.setReplyMarkup(keyboardMarkup);
 
             try {
                 execute(response); // Call method to send the message
