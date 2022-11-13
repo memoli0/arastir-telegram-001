@@ -13,13 +13,14 @@ public class myBot extends TelegramLongPollingBot {
 
 
 
-        String command = update.getMessage().getText();
+        String command = message_text;
 
         if(command.equals("/run")){
 
             SendMessage response = new SendMessage();
             response.setChatId(chat_id);
             response.setText("Hey bro");
+
 
             try {
                 execute(response); // Call method to send the message
