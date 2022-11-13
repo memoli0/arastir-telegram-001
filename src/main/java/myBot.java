@@ -68,6 +68,7 @@ public class myBot extends TelegramLongPollingBot {
 
         }else{
 
+
             String sorry = EmojiParser.parseToUnicode("Ne dediğini anlayamadım :pensive: ");
 
             SendMessage response = new SendMessage();
