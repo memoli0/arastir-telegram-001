@@ -30,7 +30,7 @@ public class myBot extends TelegramLongPollingBot {
                 e.printStackTrace();
             }
 
-        }else if(message_text.equals("/kaynak kategorileri")){
+        }else if(message_text.equals("/kaynak_kategorileri")){
 
             SendMessage response = new SendMessage();
             response.setChatId(chat_id);
