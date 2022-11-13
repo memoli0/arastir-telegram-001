@@ -33,7 +33,8 @@ public class myBot extends TelegramLongPollingBot {
 
         return "kaynak_avcisi_bot";
     }
-    
+
+
     @Override
     public String getBotToken() {
 
