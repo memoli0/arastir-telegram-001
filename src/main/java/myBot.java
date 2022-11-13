@@ -4,7 +4,6 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class myBot extends TelegramLongPollingBot {
-    private final String token = "5583906777:AAHkP9E8r8mG-28W8vnYJAyDIfCMjkZ8QS4";
     @Override
     public void onUpdateReceived(Update update) {
 
@@ -12,10 +11,7 @@ public class myBot extends TelegramLongPollingBot {
         long chat_id = update.getMessage().getChatId();
 
 
-
-        String command = message_text;
-
-        if(command.equals("/run")){
+        if(message_text.equals("/run")){
 
             SendMessage response = new SendMessage();
             response.setChatId(chat_id);
@@ -37,10 +33,10 @@ public class myBot extends TelegramLongPollingBot {
 
         return "kaynak_avcisi_bot";
     }
-
+    
     @Override
     public String getBotToken() {
 
-        return token;
+        return "5583906777:AAHkP9E8r8mG-28W8vnYJAyDIfCMjkZ8QS4";
     }
 }
