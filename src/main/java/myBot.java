@@ -18,7 +18,119 @@ public class myBot extends TelegramLongPollingBot {
 
 
 
-        if(message_text.equals("/run")){
+        if(message_text.equals("/run")&&(update.getMessage().getText().equals("/run"))){
+
+            SendMessage response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Hey bro");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+
+        }else if(message_text.equals("/1")){
+
+            SendMessage response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Hey bro");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+
+        } else if(message_text.equals("/2")){
+
+            SendMessage response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Hey bro");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+
+        }else if(message_text.equals("/3")){
+
+            SendMessage response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Hey bro");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+
+        }else if(message_text.equals("/4")){
+
+            SendMessage response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Hey bro");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+
+        }else if(message_text.equals("/5")){
+
+            SendMessage response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Hey bro");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+
+        }else if(message_text.equals("/6")){
+
+            SendMessage response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Hey bro");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+
+        }else if(message_text.equals("/7")){
+
+            SendMessage response = new SendMessage();
+            response.setChatId(chat_id);
+            response.setText("Hey bro");
+
+
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+
+        }else if(message_text.equals("/8")){
 
             SendMessage response = new SendMessage();
             response.setChatId(chat_id);
@@ -126,6 +238,12 @@ public class myBot extends TelegramLongPollingBot {
 
         }
 
+    }
+
+    @Override
+    public void onRegister() {
+        super.onRegister();
+        
     }
 
     @Override
