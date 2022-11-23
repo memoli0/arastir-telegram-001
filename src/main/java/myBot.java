@@ -254,11 +254,7 @@ public class myBot extends TelegramLongPollingBot {
 
     }
 
-    @Override
-    public void onRegister() {
-        super.onRegister();
-        
-    }
+
 
     @Override
     public String getBotUsername() {
