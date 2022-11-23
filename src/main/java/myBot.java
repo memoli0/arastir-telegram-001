@@ -45,19 +45,25 @@ public class myBot extends TelegramLongPollingBot {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     response.setText(dataSnapshot.getValue().toString());
+                    try {
+                        execute(response); // Call method to send the message
+                    } catch (TelegramApiException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                     response.setText("Hata");
+                    try {
+                        execute(response); // Call method to send the message
+                    } catch (TelegramApiException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
 
-            try {
-                execute(response); // Call method to send the message
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
+
 
 
         } else if(message_text.equals("/2")){
