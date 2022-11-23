@@ -1,3 +1,6 @@
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.vdurmont.emoji.EmojiParser;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -16,6 +19,9 @@ public class myBot extends TelegramLongPollingBot {
         long chat_id = update.getMessage().getChatId();
 
 
+        Main main = new Main();
+        FirebaseApp.initializeApp(main.firebaseConnect());
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
 
         if(message_text.equals("/run")&&(update.getMessage().getText().equals("/run"))){
