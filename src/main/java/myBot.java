@@ -17,10 +17,10 @@ public class myBot extends TelegramLongPollingBot {
         String message_text = update.getMessage().getText();
         long chat_id = update.getMessage().getChatId();
 
-        /*
+
         Main main = new Main();
         FirebaseApp.initializeApp(main.firebaseConnect());
-        */
+
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
         if(message_text.equals("/run")&&(update.getMessage().getText().equals("/run"))){
