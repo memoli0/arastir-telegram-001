@@ -37,7 +37,7 @@ public class myBot extends TelegramLongPollingBot {
             }
 
 
-        }else if(message_text.equals("/1")){
+        }else if(message_text.equals("go!")){
 
             SendMessage response = new SendMessage();
             response.setChatId(chat_id);
