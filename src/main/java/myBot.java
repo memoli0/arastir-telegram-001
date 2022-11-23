@@ -1,6 +1,5 @@
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.*;
 import com.vdurmont.emoji.EmojiParser;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -42,8 +41,17 @@ public class myBot extends TelegramLongPollingBot {
 
             SendMessage response = new SendMessage();
             response.setChatId(chat_id);
-            response.setText("Hey bro");
+            database.child("Deneme").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    response.setText(dataSnapshot.getValue().toString());
+                }
 
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    response.setText("Hata");
+                }
+            });
 
             try {
                 execute(response); // Call method to send the message
