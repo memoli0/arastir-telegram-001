@@ -17,11 +17,11 @@ public class myBot extends TelegramLongPollingBot {
         String message_text = update.getMessage().getText();
         long chat_id = update.getMessage().getChatId();
 
-
+        /*
         Main main = new Main();
-        // FirebaseApp.initializeApp(main.firebaseConnect());
+        FirebaseApp.initializeApp(main.firebaseConnect());
+        */
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-
 
         if(message_text.equals("/run")&&(update.getMessage().getText().equals("/run"))){
 
@@ -45,24 +45,18 @@ public class myBot extends TelegramLongPollingBot {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     response.setText(dataSnapshot.getValue().toString());
-                    try {
-                        execute(response); // Call method to send the message
-                    } catch (TelegramApiException e) {
-                        e.printStackTrace();
-                    }
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                     response.setText("Hata");
-                    try {
-                        execute(response); // Call method to send the message
-                    } catch (TelegramApiException e) {
-                        e.printStackTrace();
-                    }
                 }
             });
-
+            try {
+                execute(response); // Call method to send the message
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
 
 
 
