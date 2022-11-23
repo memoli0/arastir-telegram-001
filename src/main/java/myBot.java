@@ -19,7 +19,7 @@ public class myBot extends TelegramLongPollingBot {
 
 
         Main main = new Main();
-        FirebaseApp.initializeApp(main.firebaseConnect());
+        // FirebaseApp.initializeApp(main.firebaseConnect());
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
 
