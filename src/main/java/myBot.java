@@ -4,7 +4,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class myBot extends TelegramLongPollingBot {
-    private final String token = "5583906777:AAHkP9E8r8mG-28W8vnYJAyDIfCMjkZ8QS4";
+    private final String token = "**********";
     @Override
     public void onUpdateReceived(Update update) {
         // TODO
