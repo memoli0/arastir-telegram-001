@@ -7,6 +7,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class myBot extends TelegramLongPollingBot {
     @Override
@@ -249,9 +250,11 @@ public class myBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        
-        //your token
-        return "5583906777:AAHkP9E8r8mG-28W8vnYJAyDIfCMjkZ8QS4";
-        
+        Map<String,String> env = System.getenv();
+        return env.get("GOOGLE_CLOUD_PRIVATE_KEY_ID");
+        /*
+        Use this code if you don't use Github-Heroku pages
+        return "your_token";
+        */
     }
 }
