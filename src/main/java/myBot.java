@@ -1,5 +1,3 @@
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.*;
 import com.vdurmont.emoji.EmojiParser;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -18,10 +16,7 @@ public class myBot extends TelegramLongPollingBot {
         long chat_id = update.getMessage().getChatId();
 
 
-        Main main = new Main();
-        FirebaseApp.initializeApp(main.firebaseConnect());
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
         if(message_text.equals("/run")&&(update.getMessage().getText().equals("/run"))){
 
@@ -41,17 +36,7 @@ public class myBot extends TelegramLongPollingBot {
 
             SendMessage response = new SendMessage();
             response.setChatId(chat_id);
-            database.child("Deneme").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    response.setText(dataSnapshot.getValue().toString());
-                }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    response.setText("Hata");
-                }
-            });
             try {
                 execute(response); // Call method to send the message
             } catch (TelegramApiException e) {
